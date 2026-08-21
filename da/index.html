@@ -45,6 +45,7 @@
   "knowsLanguage":["en","da"],
   "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}
 }</script>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
@@ -116,6 +117,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opa
 .burger.x i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .nav-right{display:flex;align-items:center;gap:14px}
 @media (min-width:1000px){.burger{display:none}.navlinks a.navcta{display:inline-flex}}
+@media (max-width:959px){.hero .lede{max-width:none}.phero h1{max-width:none}.phero p{max-width:none}.shead p{max-width:none}}
 @media (max-width:999px){
   .navlinks{position:fixed;left:0;right:0;top:61px;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;padding:6px 26px 26px;border-bottom:1px solid var(--line);opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .22s,transform .22s;max-height:calc(100vh - 61px);overflow:auto}
   .navlinks.open{opacity:1;transform:none;pointer-events:auto}
@@ -167,7 +169,8 @@ section{padding:94px 0;position:relative;z-index:2}
 .dark .shead p,.green .shead p{color:var(--on-ink-mute)}
 .green .shead p{color:rgba(242,240,234,.82)}
 
-.pull{font-family:var(--display);font-size:clamp(21px,2.5vw,30px);font-style:italic;font-weight:300;line-height:1.4;color:var(--ink);max-width:24ch;letter-spacing:-.015em}
+.pull{font-family:var(--display);font-size:clamp(22px,2.5vw,30px);font-style:italic;font-weight:300;line-height:1.38;color:var(--ink);max-width:24ch;letter-spacing:-.015em}
+@media (max-width:799px){.pull{max-width:none}.pull-row .side{max-width:none}}
 .pull-row{display:grid;gap:34px;align-items:center}
 @media (min-width:800px){.pull-row{grid-template-columns:1.15fr .85fr;gap:64px}}
 .pull-row .side{color:var(--muted);font-size:15.5px;font-weight:300;max-width:44ch}
@@ -185,7 +188,7 @@ section{padding:94px 0;position:relative;z-index:2}
 .split .lst li::before{content:"";position:absolute;left:2px;top:21px;width:8px;height:1px;background:var(--sand-dk)}
 .split .go{margin-top:30px;display:inline-flex}
 
-.grid3{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid3{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .card{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);transition:border-color .25s,transform .25s,box-shadow .25s}
 .card:hover{border-color:var(--marine-pale);transform:translateY(-3px);box-shadow:var(--sh-lift)}
 .card .body{padding:28px}
@@ -200,6 +203,7 @@ section{padding:94px 0;position:relative;z-index:2}
 .pkg .tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--marine);background:rgba(43,88,118,.06);border:1px solid rgba(43,88,118,.2);border-radius:99px;padding:5px 12px;align-self:flex-start}
 .pkg h3{font-size:25px;margin:19px 0 12px;font-weight:400}
 .pkg > p{color:var(--muted);font-size:14.5px;font-weight:300}
+@media (max-width:640px){.pkg{padding:26px}}
 .pkg ul{list-style:none;margin:22px 0 0;padding:0}
 .pkg li{font-size:14px;padding:12px 0 12px 22px;position:relative;border-top:1px solid var(--line-soft)}
 .pkg li::before{content:"";position:absolute;left:0;top:20px;width:7px;height:1px;background:var(--sand-dk)}
@@ -213,14 +217,18 @@ section{padding:94px 0;position:relative;z-index:2}
 
 .steps{border-top:1px solid var(--line)}
 .dark .steps{border-color:rgba(242,240,234,.14)}
-.step{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:30px 0;border-bottom:1px solid var(--line)}
+.step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:28px 0;border-bottom:1px solid var(--line)}
+.step .n{grid-column:1;grid-row:1 / span 2}
+.step h4{grid-column:2}
+.step p{grid-column:2}
 .dark .step{border-color:rgba(242,240,234,.14)}
 .step .n{font-family:var(--mono);font-size:12px;color:var(--sand-dk);padding-top:6px;letter-spacing:.08em}
 .dark .step .n{color:var(--sand)}
 .step h4{font-size:20px;margin-bottom:9px;font-weight:400}
 .step p{color:var(--muted);font-size:15px;max-width:64ch;font-weight:300}
 .dark .step p{color:var(--on-ink-mute)}
-@media (min-width:760px){.step{grid-template-columns:80px 1fr 1fr;gap:36px;align-items:start}}
+@media (min-width:760px){.step{grid-template-columns:80px 1fr 1fr;gap:36px;align-items:start}
+.step .n{grid-row:auto}.step h4{grid-column:auto}.step p{grid-column:auto}}
 
 .strip{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
 
@@ -335,8 +343,8 @@ section{padding:94px 0;position:relative;z-index:2}
         <div class="hero-inner">
           <div class="hero-copy">
             <span class="eyebrow">Boliger i København</span>
-            <h1>Et sted at bo, <em>klar når du lander.</em></h1>
-            <p class="lede">Vi finder møblerede boliger til folk, der flytter til København, og vi hjælper udlejere med at leje ud til dem.</p>
+            <h1>En bolig der står klar, <em>når du lander.</em></h1>
+            <p class="lede">Vi finder møblerede boliger til folk, der flytter til København. Og vi hjælper boligejere med at leje ud til netop dem.</p>
             <div class="acts">
               <a href="boliger.html" class="btn btn-cream"><span>Jeg søger bolig</span> <span class="ar">&rarr;</span></a>
               <a href="udlejere.html" class="btn btn-line-lt"><span>Jeg har en bolig</span> <span class="ar">&rarr;</span></a>
@@ -351,8 +359,8 @@ section{padding:94px 0;position:relative;z-index:2}
     <section class="sec-sm">
       <div class="wrap">
         <div class="pull-row rv">
-          <p class="pull">Det er svært nok at flytte land. At finde et sted at bo behøver ikke være den værste del.</p>
-          <p class="side">De fleste boligannoncer i København er på dansk, kræver papirer man ikke har som nytilflytter, og er væk igen inden for et døgn. Vi tager den del, så du kan koncentrere dig om resten af flytningen.</p>
+          <p class="pull">Det er svært nok at skifte land. At finde en lejlighed behøver ikke være det værste ved det.</p>
+          <p class="side">Boligannoncerne i København er på dansk, kræver papirer man umuligt kan have endnu, og er væk igen inden for et døgn. Den del tager vi, så du kan bruge kræfterne på alt det andet, en flytning kræver.</p>
         </div>
       </div>
     </section>
@@ -364,7 +372,7 @@ section{padding:94px 0;position:relative;z-index:2}
           <div>
             <span class="eyebrow">For tilflyttere</span>
             <h3>En bolig der står klar, før du ankommer</h3>
-            <p>Vi leder for dig, arrangerer fremvisningerne og gennemgår lejekontrakten med dig, inden du skriver under. Det koster dig ikke noget.</p>
+            <p>Vi leder, sætter fremvisningerne op og læser lejekontrakten igennem sammen med dig, inden du skriver under. Intet af det koster dig noget.</p>
             <ul class="lst">
               <li>Møblerede lejligheder i hele København</li>
               <li>Adresser hvor du kan registrere din CPR-adresse</li>
@@ -384,7 +392,7 @@ section{padding:94px 0;position:relative;z-index:2}
           <div>
             <span class="eyebrow">For udlejere</span>
             <h3>Lej ud til en lejer du kan regne med</h3>
-            <p>Vores lejere er folk, der flytter hertil på grund af arbejde. Vi tjekker ansættelse og indkomst, før du møder dem, og vi laver lejekontrakten korrekt.</p>
+            <p>Vores lejere flytter hertil på grund af arbejde. Vi tjekker job og indkomst, længe før du møder dem, og vi får lejekontrakten gjort rigtigt.</p>
             <ul class="lst">
               <li>Du betaler først, når en lejer har skrevet under</li>
               <li>Ansættelse, indkomst og ID bliver tjekket</li>
@@ -399,9 +407,9 @@ section{padding:94px 0;position:relative;z-index:2}
 
     <section class="dark">
       <div class="wrap">
-        <div class="shead rv"><span class="eyebrow">For virksomheder</span><h2>Boligen på plads for dem, I ansætter</h2><p>Skal I have nogen til København, tager vi boligdelen. Selve boligsøgningen koster jer ikke noget.</p></div>
+        <div class="shead rv"><span class="eyebrow">For virksomheder</span><h2>Boligen på plads for dem, I ansætter</h2><p>Henter I nogen til København, tager vi boligdelen fra jer. Selve boligsøgningen koster ikke noget.</p></div>
         <div class="grid3 rv">
-          <div class="card"><div class="body"><h4>Én kontaktperson</h4><p>Jeres HR-afdeling har én at forholde sig til i stedet for udlejere og mæglere i hele byen.</p></div></div>
+          <div class="card"><div class="body"><h4>Én kontaktperson</h4><p>HR har én person at forholde sig til, i stedet for udlejere og mæglere spredt ud over hele byen.</p></div></div>
           <div class="card"><div class="body"><h4>Klar ved ankomst</h4><p>Nøgler, adgang og praktisk information er på plads den dag, medarbejderen lander.</p></div></div>
           <div class="card"><div class="body"><h4>Hjælp til det praktiske</h4><p>CPR-forberedelse, el og internet, bank og introduktion til byen. Prissat per medarbejder, hvis I ønsker det.</p></div></div>
         </div>
@@ -413,10 +421,10 @@ section{padding:94px 0;position:relative;z-index:2}
       <div class="wrap">
         <div class="shead rv"><span class="eyebrow">Sådan foregår det</span><h2>Fire trin, uanset hvilken side du står på</h2></div>
         <div class="steps rv">
-          <div class="step"><div class="n">01</div><h4>Vi tager en snak</h4><p>En kort samtale om, hvad du har brug for. Hvor og hvornår du vil bo, eller hvad du gerne vil leje ud.</p></div>
-          <div class="step"><div class="n">02</div><h4>Vi finder et match</h4><p>Den rigtige bolig til den rigtige person. Vi tjekker begge sider, før nogen bruger tid på en fremvisning.</p></div>
-          <div class="step"><div class="n">03</div><h4>Vi ordner papirarbejdet</h4><p>Lejekontrakt, depositum og indflytningssyn. Ordentligt gjort og dokumenteret skriftligt.</p></div>
-          <div class="step"><div class="n">04</div><h4>I kommer i gang</h4><p>Nøglerne bliver overdraget, og vi er til at få fat på, hvis noget skal ordnes bagefter.</p></div>
+          <div class="step"><div class="n">01</div><h4>Vi tager en snak</h4><p>En kort samtale om, hvad du har brug for. Hvor og hvornår du skal bo, eller hvad du har at leje ud.</p></div>
+          <div class="step"><div class="n">02</div><h4>Vi finder et match</h4><p>Den rigtige bolig til den rigtige person. Vi tjekker begge parter, før nogen bruger en eftermiddag på en fremvisning.</p></div>
+          <div class="step"><div class="n">03</div><h4>Vi ordner papirarbejdet</h4><p>Lejekontrakt, depositum og indflytningssyn. Gjort ordentligt og skrevet ned.</p></div>
+          <div class="step"><div class="n">04</div><h4>I kommer i gang</h4><p>Nøglerne skifter hænder, og vi er stadig til at få fat på, hvis noget skal ordnes bagefter.</p></div>
         </div>
       </div>
     </section>
