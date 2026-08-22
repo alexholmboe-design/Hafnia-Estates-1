@@ -113,10 +113,12 @@ since each file carries its own copy.
 
 Search and replace across all twelve files:
 
-- `hello@hafniahomes.dk` → your real email
-- `+45 00 00 00 00` → your real phone number, in the visible text **and** in
-  the `"telephone"` line of the structured data near the top of each file
-- `[CVR-nr.]` → your CVR number
+- `hello@hafniahomes.dk` → your real email once it is set up
+
+Your phone number (+45 22 48 76 97) is already in place, including the
+WhatsApp links and the structured data. There is no CVR number on the site —
+add one to the footer in `style`-adjacent markup once the company is
+registered, if you want it shown.
 
 Add a real `hero.jpg`. It is the preview image whenever anyone shares a link,
 so until it exists, links posted on LinkedIn show nothing. Alternatively use
@@ -134,3 +136,21 @@ Add **both** `hafniahomes.dk` and the `/da/` section to Google Search Console
 and submit `https://hafniahomes.dk/sitemap.xml`. The sitemap already declares
 the language pairings, so Google will pick up both versions from that one
 submission.
+
+
+---
+
+## Images
+
+Twelve photos in `images/`, all cropped and compressed to under about
+220 KB. Every page carries at least one. To swap one out, save a new file
+over the old one with the same filename and the same shape — the full list
+is in `images/README.txt`.
+
+`hero.jpg` loads with priority because it is the first thing a visitor sees,
+and it doubles as the preview image whenever a link is shared. The rest load
+as you scroll.
+
+Once you have photographed real apartments you are letting, replace
+`hero.jpg`, `relocating.jpg` and `process.jpg` first. Those three carry the
+most weight, and a real property beats a stock interior every time.
